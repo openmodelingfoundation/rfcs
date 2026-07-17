@@ -2,7 +2,7 @@
 
 This repository contains Requests for Comments (RFCs) for proposed Open Modeling Foundation (OMF) standards, governance changes, and other significant community decisions.
 
-RFCs provide an open, transparent process for discussing ideas before they become official OMF standards.
+RFCs provide an open, transparent process for discussing ideas before they become official OMF standards. All discussion, revisions, and decision history are preserved in Git to provide a permanent public record.
 
 ## When is an RFC needed?
 
@@ -27,16 +27,17 @@ Small editorial fixes and clarifications should be made directly to the relevant
    Submit the RFC as a pull request against this repository. Community discussion and revisions take place in the PR and any linked GitHub Discussions. Once the PR is opened, a maintainer will assign the RFC its permanent number and you can rename the file accordingly.
 
 4. **Community Review**
-   Contributors are encouraged to review the proposal, ask questions, suggest improvements, and identify potential issues. Authors should update the RFC in response to constructive feedback. There's no fixed review period, but substantive RFCs should stay open for comment for at least two weeks before a decision is made.
+   There's no fixed review period. Maintainers will allow sufficient time for community feedback before making a decision, taking into account the scope and impact of the proposal.
 
 5. **Decision**
    Maintainers will determine whether the RFC is:
-   * **Accepted** — The proposal is approved and merged.
-   * **Rejected** — The proposal is closed with rationale.
-   * **Deferred** — The proposal has merit but is not actionable right now; it may be revisited in the future.
+   * **Accepted**: The proposal is approved and merged.
+   * **Rejected**: The proposal is closed with rationale.
+   * **Deferred**: The proposal has merit but is not actionable right now; it may be revisited in the future.
+   * **Superseded**: Replaced by a later accepted RFC.
 
 6. **Implementation**
-   Accepted RFCs become the basis for OMF standards or governance changes. Acceptance represents agreement on the direction, not necessarily immediate implementation — implementation may be tracked in a separate issue linked from the RFC.
+   Accepted RFCs provide the design basis for OMF standards, governance changes, or other Foundation initiatives. The resulting standard or implementation may evolve during development, but any substantive changes should be proposed through a new RFC.
 
 ## RFC Lifecycle
 
@@ -60,12 +61,24 @@ Implementation
 rfcs/
 ├── README.md
 ├── template.md
-├── 0001-model-documentation-standard.md
-├── 0002-...
-└── ...
+├── text/
+│   ├── 0001-model-documentation-standard.md
+│   └── ...
+└── assets/
 ```
 
-RFC numbers are assigned sequentially by a maintainer at PR-open time and remain permanent, regardless of whether an RFC is accepted or rejected. Each RFC file should begin with a short metadata block (number, title, status, author, date) as shown in `template.md`, so status is visible without checking PR history.
+RFC numbers are assigned sequentially by a maintainer at PR-open time and remain permanent, regardless of whether an RFC is accepted or rejected. Each RFC file should begin with a short metadata block:
+
+```
+Number:
+Title:
+Status:
+Author:
+Created:
+Discussion:
+Supersedes: (optional)
+Superseded-By: (optional)
+```
 
 ## Guiding Principles
 
@@ -73,7 +86,7 @@ The RFC process aims to be:
 
 * **Open** — Anyone may propose ideas and participate in discussion.
 * **Transparent** — All proposals, reviews, and decisions are public.
-* **Collaborative** — Consensus is preferred over voting whenever possible.
+* **Collaborative** — Decisions are made by maintainers after considering community feedback. Consensus is preferred over voting whenever practical.
 * **Documented** — Decisions and their rationale are preserved for future contributors.
 * **Lightweight** — The process should encourage participation rather than create unnecessary bureaucracy.
 
